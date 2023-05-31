@@ -1,0 +1,57 @@
+<div class="container  " style="height: 400px; width: 85%;">
+    <div class="text-center mt-5 mb-3 border-bottom  border-warning m-auto w-75">
+         <h5 class="text-warning">Update User</h5>
+    </div>
+    
+    
+     <div class="row ">
+         <form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+             <div class="d-flex justify-content-between ">
+                 <div class="mb-1 col-5">
+
+                     <p> Name:</p>
+                     <input class="form-control "type="text" formControlName="name">
+                     <div *ngIf="myForm.controls['name'].invalid && (myForm.controls['name'].dirty || myForm.controls['name'].touched)">
+                       
+                        Name is not Valid .
+                  </div>
+                 </div>
+                 <div class="mb-1 col-5">
+                     <p> Email Address:</p>
+                     <input class="form-control " type="email" formControlName="email">
+                     <div *ngIf="myForm.controls['email'].invalid && (myForm.controls['email'].dirty || myForm.controls['email'].touched)">
+                       
+                        Name is not Valid .
+                  </div>
+                
+                 </div>
+             </div>
+             
+             <div class="mb-1 col-5">
+                 <p> Phone:</p>
+                 <input class="form-control "type="text" formControlName="phone">
+                 <div *ngIf="myForm.controls['phone'].invalid && (myForm.controls['phone'].dirty || myForm.controls['phone'].touched)">
+                       
+                    Name is not Valid .
+              </div>
+             </div>
+             <div class="mb-1">
+                 <p> Address:</p>
+                 <div class="d-flex input-group justify-content-between" >
+                     <div class="col-3"><input class="col-9 form-control" type="text" formControlName="street"></div>
+                     <div class="col-3"><input class="col-9 form-control" type="text" formControlName="suite"></div>
+                     <div class="col-3"><input class="col-9 form-control" type="text" formControlName="city"></div>
+                 </div>
+             </div>
+             
+             <div class="m-3 w-75 m-auto mt-3 mb-3">
+                 
+                 <button class="btn btn-primary col-12 "type="submit">Save</button>
+             </div>
+             
+         </form>
+ 
+     </div>
+ 
+ </div>
+ 

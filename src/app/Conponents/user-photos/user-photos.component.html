@@ -1,0 +1,34 @@
+<div>
+  <nav class="navbar bg-primary d-flex justify-content-center m-auto" data-bs-theme="dark " >
+      <div class="col-3 text-center">   
+        <p class="navbar-brand text-light m-0 ps-5" style="font-size: medium !important; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">{{user.name}}</p>
+      </div>
+      <div class="col-3 "> 
+          <p class="navbar-brand text-light m-0 p-0 ps-5  border-end border-start" style="font-size: small !important; font-weight: bold; font-family: Arial, Helvetica, sans-serif;" >{{user.email}}</p>
+          <p class="navbar-brand text-light m-0 p-0 ps-5 border-end border-start" style="font-size: small !important; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">{{user.phone}}</p>
+      </div>
+      <div class="col-3 ">   
+          <p class="navbar-brand text-light m-0 p-0  ps-5"style="font-size: small !important; font-weight: bold; font-family: Arial, Helvetica, sans-serif;" >Address</p>
+          <p class="navbar-brand text-light m-0 p-0  ps-5" style="font-size: small !important; font-weight: bold; font-family: Arial, Helvetica, sans-serif;">{{user.address.street}} {{user.address.suite}} {{user.address.city}}</p>
+        </div>
+    </nav>
+    
+</div>
+
+
+<div class="mb-5">
+    <h2 class="text-center mt-3 w-75 m-auto text-warning border-bottom border-warning pb-2">Photos</h2>
+</div>
+<div class="row m-auto m-5 d-flex flex" style="width: 80%;">
+    <div class="col-2  mb-1 p-1"  *ngFor="let f of Photos ; let i = index">
+        <div class="card-body   bg-warning">
+            
+                <img src="{{f.url}}" class="card-img-top">
+            
+            
+        </div>
+      
+      <!-- Add a clearfix div after every third item -->
+      <div class="clearfix" *ngIf="(i + 1) % 6 === 0"></div>
+    </div>
+  </div>
