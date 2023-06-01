@@ -32,7 +32,7 @@ export class UpdateUserComponent {
 
   
   onSubmit() {
-    
+    if(this.myForm.valid){
     this.myService.UpdateUser({
       id:this.data.id,
       name:this.myForm.value.name,
@@ -44,13 +44,14 @@ export class UpdateUserComponent {
       },
       phone:this.myForm.value.phone
     },this.data.id).subscribe();
+   
     this.onClose({id:this.data.id,
-                  name:this.myForm.value.name,
-                  email:this.myForm.value.email,
-                  address:{street:this.myForm.value.street,suite:this.myForm.value.suite,city:this.myForm.value.city},
-                  phone:this.myForm.value.phone});
-
-                
+      name:this.myForm.value.name,
+      email:this.myForm.value.email,
+      address:{street:this.myForm.value.street,suite:this.myForm.value.suite,city:this.myForm.value.city},
+      phone:this.myForm.value.phone});        
+    
+    } 
   }
   onClose(e:any) {
     this.dialogRef.close(e);
